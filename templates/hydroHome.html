@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hydrostorm</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:wght@900&display=swap");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      overflow-x: hidden; /*of was hidden*/
+      background: #fff;
+      min-height: 100vh;
+    }
+    #header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 30px 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(rgb(231, 219, 196), #fff);
+      z-index: 10000;
+    }
+    #header .logo {
+      color: #094b65;
+      font-weight: 500;
+      font-size: 3em;
+      text-decoration: none;
+    }
+    #header ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #header ul li {
+      list-style: none;
+      font-size: 1.4em;
+      margin-left: 20px;
+    }
+    #header ul li a {
+      text-decoration: none;
+      padding: 6px 15px;
+      color: #094b65;
+      border-radius: 20px;
+    }
+    #header ul li a:hover,
+    #header ul li a.active {
+      background: #094b65;
+      color: #fff;
+    }
+    section {
+      top: 10em;
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    section::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(to top, #094b65, transparent);
+      z-index: 10;
+    }
+    section img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+    section #text {
+      position: absolute;
+      color: #96999a;
+      font-size: 10vw;
+      text-align: center;
+      line-height: 0.55em;
+      transform: translateY(-50%);
+    }
+    section #text span {
+      font-size: 0.2em;
+      letter-spacing: 2px;
+      font-weight: 400;
+    }
+    #btn {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 30px;
+      background: rgb(72, 69, 118);
+      color: #fff;
+      font-size: 1.6em;
+      font-weight: 500;
+      letter-spacing: 2px;
+      border-radius: 40px;
+      transform: translateY(100px);
+    }
+    .sec {
+      position: relative;
+      top: 10em;
+      padding: 100px;
+      background: #094b65;
+      color: #fff;
+    }
+    .sec h2 {
+      font-size: 3.5em;
+      margin-bottom: 10px;
+    }
+    .sec p {
+      font-size: 1pm;
+      color: #fff;
+    }
+    .sec2 {
+      position: relative;
+      top: 10em;
+      padding: 100px;
+      background: #bdbfc0;
+      text-align: center;
+      color: black;
+    }
+  </style>
+  <body>
+    <header id="header">
+      <a
+        href="/"
+        class="logo"
+        ><img src="\static\logo3.png" height="50" /> Hydrostorm</a
+      >
+      <ul>
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/explore">Explore</a></li>
+        <li>
+          <a href="https://medium.com/@hydrostorm1000/hydrostorm-d685c4fe4bd6"
+            >Article</a
+          >
+        </li>
+        <li><a href="#">About Us</a></li>
+      </ul>
+    </header>
+    <section>
+      <h2 id="text"><span>Build Hydropower plants with</span><br />Innovations</h2>
+      <img src="\static\bird1.png" id="bird1" />
+      <img src="\static\bird2.png" id="bird2" />
+      <img src="\static\forest.png" id="dam" style="top: 15em" />
+      <img src="\static\rocks.png" id="rocks" style="top: 10em" />
+      <a href="/explore" id="btn">Explore</a>
+
+      <img src="\static\water.png" id="waves" />
+    </section>
+    <div class="sec">
+      <h2>HydroStorm</h2>
+      <h2>Abstract</h2>
+      <p>
+        HydroStorm is a website that harnesses machine learning (ML) models to revolutionize the design and planning of hydropower plants along rivers. By analyzing satellite images through advanced satellite image processing, HydroStorm identifies potential sites for hydropower plant construction by scrutinizing map patterns. The platform integrates ML models trained on image datasets depicting various dam statuses, including proposed, completed, and under construction, denoted by colored dots. Additionally, HydroStorm employs ML algorithms like logistic regression to forecast hydro power plant types such as Storage, Pumped Storage, and Run-of-River, using real datasets. Furthermore, it utilizes ML models like random forest, CT-Gan, multioutput regressor to predict dam height, reservoir capacity, and area, leveraging eight distinct inputs like water head height and wave energy, derived from real datasets of India. Data collection is facilitated through remote sensors. HydroStorm's backend is powered by Flask, while the frontend employs HTML, CSS, and JavaScript. By offering insights and tools tailored to civil engineers and architects, HydroStorm enhances project planning, sustainability, and resource optimization, fostering collaborative innovation in renewable energy infrastructure development.
+      </p>
+      <h2>How it Works</h2>
+      <p>
+        1. <strong>*Data Collection*</strong>: HydroStorm gathers data from various sources, including satellite images and real datasets, which depict dam statuses, water head height, wave energy, and more. Data collection is facilitated through remote sensors for accuracy and real-time information.
+        <br>
+
+        2. <strong>*Satellite Image Processing*</strong>: Advanced satellite image processing techniques are applied to analyze satellite images. These images are scrutinized to identify potential sites for hydropower plant construction by recognizing map patterns. <br>
+
+        3. <strong>*Machine Learning Models*</strong>: HydroStorm integrates machine learning models trained on the collected datasets. These models include logistic regression for forecasting hydro power plant types and algorithms like random forest, CT-Gan, and multioutput regressor for predicting crucial factors such as dam height, reservoir capacity, and area. <br>
+
+        4. <strong>*Backend and Frontend*</strong>: The backend of HydroStorm is powered by Flask, ensuring efficiency and reliability in processing and managing data. On the frontend, HTML, CSS, and JavaScript are utilized to create a user-friendly interface for civil engineers and architects. <br>
+
+        5. <strong>*Insights and Tools*</strong>: HydroStorm offers tailored insights and tools based on the analyzed data. These insights aid in project planning, sustainability, and resource optimization, empowering users to make informed decisions. <br>
+
+      </p>
+      <h2>What's Next</h2>
+      <p>
+        The future roadmap for HydroStorm could involve several exciting developments and enhancements, including: <br>
+
+1. *Advanced Machine Learning Techniques*: Integration of cutting-edge machine learning techniques such as deep learning and reinforcement learning to further improve the accuracy and efficiency of predictions. <br>
+
+2. *Expansion of Geographic Coverage*: Extending HydroStorm's capabilities to cover more regions globally, enabling users to analyze potential hydropower plant sites and optimize resource utilization on a larger scale. <br>
+
+3. *Integration of Environmental Impact Assessments*: Incorporating environmental impact assessments into the platform to evaluate the sustainability and ecological implications of hydropower plant projects, promoting responsible development practices. <br>
+
+4. *Enhanced Collaboration Tools*: Introducing collaborative features such as real-time collaboration, version control, and project sharing functionalities to streamline teamwork and foster collaboration among stakeholders. <br>
+
+5. *Integration with Renewable Energy Sources*: Integrating data and analysis capabilities for other renewable energy sources like wind and solar energy. <br>
+
+      </p>
+      <h2>Reference</h2>
+      <p>
+        <ul>
+          <li><a href="https://www.sciencedirect.com/science/article/pii/S2405844022019260" style="text-decoration: underline; color: #fff; list-style-type: none;">https://www.sciencedirect.com/science/article/pii/S2405844022019260</a></li>
+          <li><a href="https://www.sciencedirect.com/science/article/pii/S1364815220310045" style="text-decoration: underline; color: #fff; list-style-type: none;">https://www.sciencedirect.com/science/article/pii/S1364815220310045</a></li>
+          <li><a href="https://www.researchgate.net/publication/262019532_Design_Planning_of_Micro-hydro_Power_Plant_in_Hink_River" style="text-decoration: underline; color: #fff; list-style-type: none;">https://www.researchgate.net/publication/262019532_Design_Planning_of_Micro-hydro_Power_Plant_in_Hink_River</a></li>
+          <li><a href="https://www.mdpi.com/2673-2688/3/1/6" style="text-decoration: underline; color: #fff; list-style-type: none;">https://www.mdpi.com/2673-2688/3/1/6</a></li>
+        </ul>
+      </p>
+      <h2>Conclusion</h2>
+      <p>In conclusion, HydroStorm stands at the forefront of revolutionizing hydropower plant design and planning through its innovative integration of machine learning and data analytics. By harnessing advanced techniques such as satellite image processing and predictive modeling, HydroStorm empowers engineers and architects with valuable insights and tools for optimizing renewable energy infrastructure projects.With its commitment to sustainability, efficiency, and collaboration, HydroStorm paves the way for a greener future by enabling responsible development practices and maximizing the potential of hydropower resources. As it continues to evolve and expand its capabilities, HydroStorm holds promise as a pivotal solution in the ongoing global transition towards renewable energy sources.</p>
+    </div>
+    <div class="sec2">@copyright act under 15253.</div>
+    <script>
+      let text = document.getElementById("text");
+      let bird1 = document.getElementById("bird1");
+      let bird2 = document.getElementById("bird2");
+      let btn = document.getElementById("btn");
+      let rocks = document.getElementById("rocks");
+      let dam = document.getElementById("dam");
+      let waves = document.getElementById("waves");
+      let header = document.getElementById("header");
+      window.addEventListener("scroll", function () {
+        let value = window.scrollY;
+        text.style.top = 25 + value * -0.1 + "%";
+        bird1.style.top = value * -1.5 + "px";
+        bird1.style.left = value * 1.2 + "px";
+        bird2.style.top = value * -1.5 + "px";
+        bird2.style.left = value * -1.5 + "px";
+        btn.style.marginTop = value * 1.5 + "px";
+        rocks.style.top = value * -0.12 + "px";
+        forest.style.top = value * 0.25 + "px";
+        header.style.top = value * 0.5 + "px";
+      });
+    </script>
+  </body>
+</html>
